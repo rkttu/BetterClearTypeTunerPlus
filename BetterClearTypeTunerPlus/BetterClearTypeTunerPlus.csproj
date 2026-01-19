@@ -26,7 +26,22 @@
 		<UseApplicationTrust>false</UseApplicationTrust>
 		<BootstrapperEnabled>true</BootstrapperEnabled>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<StartupObject>BetterClearTypeTunerPlus.Program</StartupObject>
+		<ApplicationIcon>App.ico</ApplicationIcon>
+		<PlatformTarget>AnyCPU</PlatformTarget>
 	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <PreferNativeArm64>True</PreferNativeArm64>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <PreferNativeArm64>True</PreferNativeArm64>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Include="App.ico" />
+	</ItemGroup>
 
 	<ItemGroup>
 	  <Compile Update="Properties\Resources.Designer.cs">
