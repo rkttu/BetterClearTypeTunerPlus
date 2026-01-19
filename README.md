@@ -1,5 +1,8 @@
-# Better ClearType Tuner
+# Better ClearType Tuner Plus
+
 A better way to configure ClearType font smoothing on Windows 10.
+
+> **Note:** This is a modernized fork of the original [BetterClearTypeTuner](https://github.com/bp2008/BetterClearTypeTuner) by [bp2008](https://github.com/bp2008). The original project has not been maintained for a long time, so this version was created to continue development and add improvements.
 
 ## Features
 
@@ -14,7 +17,7 @@ Quickly set font-smoothing settings in Windows 10 and know what you are getting,
 
 ## Usage
 
-Download from the [Releases Section](https://github.com/bp2008/BetterClearTypeTuner/releases), extract, and run.
+Download from the [Releases Section](https://github.com/rkttu/BetterClearTypeTunerPlus/releases), extract, and run.
 
 ## Caveats
 
@@ -25,3 +28,12 @@ There appears to be some level of support for setting different ClearType settin
 ## Shout-out to MacType
 
 For those who want more advanced text rendering tweaks, I strongly recommend [MacType](https://www.mactype.net/).  MacType enables much deeper customization of text rendering (although it doesn't work with everything) and is particularly useful on [displays that use subpixel layouts not natively supported in Windows](https://github.com/snowie2000/mactype/issues/720).
+
+## License
+
+This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- Original project: [BetterClearTypeTuner](https://github.com/bp2008/BetterClearTypeTuner) by [bp2008](https://github.com/bp2008)
+

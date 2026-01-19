@@ -1,29 +1,26 @@
-﻿using BetterClearTypeTuner.Native;
+using BetterClearTypeTunerPlus.Native;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BetterClearTypeTuner
+namespace BetterClearTypeTunerPlus
 {
 	public partial class MainForm : Form
 	{
-		bool dirty = false;
-		bool initialized = false;
-		bool setDefaults = false;
-		Color TextColor = SystemColors.WindowText;
-		Color BackgroundColor = SystemColors.Control;
-		List<Control> fontableControls = new List<Control>();
-		SortedList<string, float> baselineFontSizes = new SortedList<string, float>();
+		private bool dirty = false;
+        private bool initialized = false;
+        private bool setDefaults = false;
+        private Color TextColor = SystemColors.WindowText;
+        private Color BackgroundColor = SystemColors.Control;
+        private List<Control> fontableControls = new List<Control>();
+        private SortedList<string, float> baselineFontSizes = new SortedList<string, float>();
 
 		public MainForm()
 		{
@@ -33,7 +30,7 @@ namespace BetterClearTypeTuner
 			GatherFontableControls(this, this.Font.FontFamily.Name);
 
 			lblNotAdmin.Visible = false;
-			this.Text += " " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+			this.Text += " " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
 			try
 			{

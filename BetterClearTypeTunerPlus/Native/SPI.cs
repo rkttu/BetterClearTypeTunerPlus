@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BetterClearTypeTuner
+namespace BetterClearTypeTunerPlus.Native
 {
-	#region SPI
 	/// <summary>
 	/// SPI_ System-wide parameter - Used in SystemParametersInfo function 
 	/// </summary>
@@ -1209,5 +1202,4 @@ namespace BetterClearTypeTuner
 		/// </summary>
 		SPI_SETFONTSMOOTHINGORIENTATION = 0x2013,
 	}
-	#endregion // SPI
 }
