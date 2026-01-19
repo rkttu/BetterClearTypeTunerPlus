@@ -1,3 +1,4 @@
+using BetterClearTypeTunerPlus.Properties;
 using System;
 using System.Threading;
 using System.Windows.Forms;
@@ -20,7 +21,7 @@ namespace BetterClearTypeTunerPlus
 			{
 				if (!mutex.WaitOne(0, false))
 				{
-					MessageBox.Show("Another instance of Better ClearType Tuner Plus is already running.", "Better ClearType Tuner Plus", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+					MessageBox.Show(Resources.MultipleInstanceNotAllowed, Resources.MessageBoxErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 					return;
 				}
 

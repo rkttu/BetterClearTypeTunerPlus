@@ -117,25 +117,52 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ContrastStatus" xml:space="preserve">
-    <value>(Contrast: {0})</value>
+  <data name="lblSample1.Text" xml:space="preserve">
+    <value>다람쥐 헌 쳇바퀴에 타고파.</value>
   </data>
-  <data name="GrayscaleStatus" xml:space="preserve">
-    <value>Grayscale</value>
+  <data name="lblSample3.Text" xml:space="preserve">
+    <value>다람쥐 헌 쳇바퀴에 타고파.</value>
   </data>
-  <data name="MessageBoxErrorTitle" xml:space="preserve">
-    <value>Error</value>
+  <data name="lblSample2.Text" xml:space="preserve">
+    <value>다람쥐 헌 쳇바퀴에 타고파.</value>
   </data>
-  <data name="MultipleInstanceNotAllowed" xml:space="preserve">
-    <value>Another instance of Better ClearType Tuner Plus is already running.</value>
+  <data name="cbFontAntialiasing.Text" xml:space="preserve">
+    <value>안티앨리어싱 활성화</value>
   </data>
-  <data name="NotAdmin" xml:space="preserve">
-    <value>[NOT ADMIN]</value>
+  <data name="rbGrayscale.Text" xml:space="preserve">
+    <value>그레이스케일</value>
   </data>
-  <data name="Pangram" xml:space="preserve">
-    <value>The quick brown fox jumps over a lazy dog.</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>대비:</value>
   </data>
-  <data name="RegistrySetFailMessage" xml:space="preserve">
-    <value>Unable to set all legacy registry values. While your change may have worked, for best results you should run this application as an administrator and try making changes again.</value>
+  <data name="btnRestoreDefaults.Text" xml:space="preserve">
+    <value>기본값 복원</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>기본 스케일 샘플:</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>변경 사항이 모든 곳에 적용되려면 컴퓨터를 재부팅해야 할 수 있습니다.</value>
+  </data>
+  <data name="btnSet.Text" xml:space="preserve">
+    <value>&gt; 설정</value>
+  </data>
+  <data name="btnSet.ToolTip" xml:space="preserve">
+    <value>대비 조절의 초점을 해제하거나 이 버튼을 클릭하면 대비가 설정됩니다.</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>400% 배율 샘플:</value>
+  </data>
+  <data name="lblNotAdmin.Text" xml:space="preserve">
+    <value>관리자 권한이 필요합니다.</value>
+  </data>
+  <data name="btnChangeFont.Text" xml:space="preserve">
+    <value>글꼴 변경</value>
+  </data>
+  <data name="cbDarkmode.Text" xml:space="preserve">
+    <value>어두운 모드</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>위에서 선택한 안티 앨리어싱 설정은 연결된 모든 디스플레이에 적용됩니다. Windows 10 1903 버전에서는 현재 모니터별로 이러한 설정을 지정할 수 있는 기능이 제공되지 않기 때문입니다.</value>
   </data>
 </root>

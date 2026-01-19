@@ -51,11 +51,11 @@ namespace BetterClearTypeTunerPlus
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.lblNotAdmin = new System.Windows.Forms.Label();
             this.btnChangeFont = new System.Windows.Forms.Button();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.cbDarkmode = new System.Windows.Forms.CheckBox();
             this.status = new System.Windows.Forms.Label();
             this.panelBottomBorder = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.panelSmall.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbZoomed)).BeginInit();
             this.panel1.SuspendLayout();
@@ -225,10 +225,6 @@ namespace BetterClearTypeTunerPlus
             this.btnChangeFont.UseVisualStyleBackColor = true;
             this.btnChangeFont.Click += new System.EventHandler(this.btnChangeFont_Click);
             // 
-            // fontDialog1
-            // 
-            this.fontDialog1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            // 
             // cbDarkmode
             // 
             this.cbDarkmode.BackColor = System.Drawing.Color.Transparent;
@@ -255,6 +251,10 @@ namespace BetterClearTypeTunerPlus
             this.label8.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
+            // 
+            // fontDialog1
+            // 
+            this.fontDialog1.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             // 
             // MainForm
             // 

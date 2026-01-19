@@ -1,4 +1,5 @@
 using BetterClearTypeTunerPlus.Native;
+using BetterClearTypeTunerPlus.Properties;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -36,12 +37,12 @@ namespace BetterClearTypeTunerPlus
 			{
 				foreach (string displayName in GetDisplayNames())
 				{
-					RegistryKey key = Registry.LocalMachine.CreateSubKey("Software\\Microsoft\\Avalon.Graphics\\" + displayName);
+					RegistryKey key = Registry.LocalMachine.CreateSubKey(@"Software\Microsoft\Avalon.Graphics\" + displayName);
 				}
 			}
 			catch (UnauthorizedAccessException)
 			{
-				this.Text += " [NOT ADMIN]";
+				this.Text += " " + Resources.NotAdmin;
 				lblNotAdmin.Visible = true;
 			}
 			bool startInDarkMode = PrefersDarkMode();
@@ -114,7 +115,7 @@ namespace BetterClearTypeTunerPlus
 				control.BackColor = BackgroundColor;
 				control.ForeColor = TextColor;
 			}
-			else if (control.Name == "panelSmall" || control.Name == "lblNotAdmin")
+			else if (control.Name == nameof(panelSmall) || control.Name == nameof(lblNotAdmin))
 			{
 				if (dark)
 				{
@@ -224,8 +225,8 @@ namespace BetterClearTypeTunerPlus
 			{
 				if (setDefaults)
 				{
-					DeleteRegistrySubkeys(Registry.LocalMachine, "Software\\Microsoft\\Avalon.Graphics");
-					DeleteRegistrySubkeys(Registry.CurrentUser, "Software\\Microsoft\\Avalon.Graphics");
+					DeleteRegistrySubkeys(Registry.LocalMachine, @"Software\Microsoft\Avalon.Graphics");
+					DeleteRegistrySubkeys(Registry.CurrentUser, @"Software\Microsoft\Avalon.Graphics");
 				}
 				else
 				{
@@ -240,16 +241,16 @@ namespace BetterClearTypeTunerPlus
 					int contrast = (int)Clamp((uint)nudContrast.Value, 1000, 2200);
 
 					// Local Machine
-					SetRegistryDWORDValue(Registry.LocalMachine, "Software\\Microsoft\\Avalon.Graphics\\" + displayName, "GammaLevel", contrast);
-					SetRegistryDWORDValue(Registry.LocalMachine, "Software\\Microsoft\\Avalon.Graphics\\" + displayName, "PixelStructure", pixelStructure);
+					SetRegistryDWORDValue(Registry.LocalMachine, @"Software\Microsoft\Avalon.Graphics\" + displayName, "GammaLevel", contrast);
+					SetRegistryDWORDValue(Registry.LocalMachine, @"Software\Microsoft\Avalon.Graphics\" + displayName, "PixelStructure", pixelStructure);
 
 					// Current User
-					SetRegistryDWORDValue(Registry.CurrentUser, "Software\\Microsoft\\Avalon.Graphics\\" + displayName, "ClearTypeLevel", pixelStructure == 0 ? 0 : 100);
-					SetRegistryDWORDValue(Registry.CurrentUser, "Software\\Microsoft\\Avalon.Graphics\\" + displayName, "EnhancedContrastLevel", 50);
-					SetRegistryDWORDValue(Registry.CurrentUser, "Software\\Microsoft\\Avalon.Graphics\\" + displayName, "GammaLevel", contrast);
-					SetRegistryDWORDValue(Registry.CurrentUser, "Software\\Microsoft\\Avalon.Graphics\\" + displayName, "GrayscaleEnhancedContrastLevel", 100);
-					SetRegistryDWORDValue(Registry.CurrentUser, "Software\\Microsoft\\Avalon.Graphics\\" + displayName, "PixelStructure", pixelStructure);
-					SetRegistryDWORDValue(Registry.CurrentUser, "Software\\Microsoft\\Avalon.Graphics\\" + displayName, "TextContrastLevel", 1);
+					SetRegistryDWORDValue(Registry.CurrentUser, @"Software\Microsoft\Avalon.Graphics\" + displayName, "ClearTypeLevel", pixelStructure == 0 ? 0 : 100);
+					SetRegistryDWORDValue(Registry.CurrentUser, @"Software\Microsoft\Avalon.Graphics\" + displayName, "EnhancedContrastLevel", 50);
+					SetRegistryDWORDValue(Registry.CurrentUser, @"Software\Microsoft\Avalon.Graphics\" + displayName, "GammaLevel", contrast);
+					SetRegistryDWORDValue(Registry.CurrentUser, @"Software\Microsoft\Avalon.Graphics\" + displayName, "GrayscaleEnhancedContrastLevel", 100);
+					SetRegistryDWORDValue(Registry.CurrentUser, @"Software\Microsoft\Avalon.Graphics\" + displayName, "PixelStructure", pixelStructure);
+					SetRegistryDWORDValue(Registry.CurrentUser, @"Software\Microsoft\Avalon.Graphics\" + displayName, "TextContrastLevel", 1);
 				}
 			}
 		}
@@ -351,9 +352,10 @@ namespace BetterClearTypeTunerPlus
 				return;
 			lblNotAdmin.Visible = true;
 			registryFail = true;
-			MessageBox.Show("Unable to set all legacy registry values. While your change may have worked, for best results you should run this application as an administrator and try making changes again.");
+			MessageBox.Show(Resources.RegistrySetFailMessage, Resources.MessageBoxErrorTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
 		}
 		#endregion
+
 		#region Helpers
 		private string[] GetDisplayNames()
 		{
@@ -424,14 +426,14 @@ namespace BetterClearTypeTunerPlus
 
 				EnableEvents();
 
-				string quick = "The quick brown fox jumps over the lazy dog. ";
+				string quick = Resources.Pangram;
 				// Update status text
 				if (aaEnabled)
 				{
 					if (smoothingType == FontSmoothingType.ClearType)
-						status.Text = quick + orientation + " (Contrast " + contrast + ")";
+						status.Text = quick + " " + orientation + " " + string.Format(Resources.ContrastStatus, contrast);
 					else
-						status.Text = quick + "Grayscale (Contrast " + contrast + ")";
+						status.Text = quick + " " + Resources.GrayscaleStatus + " " + string.Format(Resources.ContrastStatus, contrast);
 				}
 				else
 				{
